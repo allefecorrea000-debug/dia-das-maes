@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Dia das Mães ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+
+    <h1>Feliz Dia das Mães ❤️</h1>
+
+    <p class="mensagem-topo">
+        Mãe, você é meu porto seguro, minha inspiração e a pessoa mais importante da minha vida.
+        Obrigado por cada abraço, cada conselho, cada cuidado e por nunca desistir de mim.
+        Tudo que sou hoje tem um pouco do seu amor em cada detalhe.
+    </p>
+
+</header>
+
+<div class="container">
+
+    <div class="slider">
+
+        <div class="slide active">
+            <img src="img/img01.jpg">
+
+            <div class="texto">
+                <h2>Obrigado por tudo ❤️</h2>
+                <p>Seu amor me fortalece todos os dias.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/img02.jpg">
+
+            <div class="texto">
+                <h2>Você é incrível 🌸</h2>
+                <p>Seu carinho faz meus dias mais felizes.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/img03.jpg">
+
+            <div class="texto">
+                <h2>Minha inspiração ✨</h2>
+                <p>Obrigado por cada ensinamento e cuidado.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/img04.jpg">
+
+            <div class="texto">
+                <h2>Amor infinito 💖</h2>
+                <p>Você merece toda felicidade do mundo.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/img05.jpg">
+
+            <div class="texto">
+                <h2>Momentos especiais 🌷</h2>
+                <p>Os melhores momentos são ao seu lado.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/img06.jpg">
+
+            <div class="texto">
+                <h2>Minha melhor mãe ❤️</h2>
+                <p>Seu amor é minha maior força.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="img/img07.jpg">
+
+            <div class="texto">
+                <h2>Te amo muito 🌹</h2>
+                <p>Obrigado por existir na minha vida.</p>
+            </div>
+        </div>
+
+        <button class="prev" onclick="mudarSlide(-1)">❮</button>
+        <button class="next" onclick="mudarSlide(1)">❯</button>
+
+    </div>
+
+</div>
+
+<script>
+
+let slideAtual = 0;
+const slides = document.querySelectorAll('.slide');
+
+function atualizarSlides() {
+
+    slides.forEach((slide, index) => {
+
+        if(index === slideAtual) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+}
+
+function mudarSlide(direcao) {
+
+    slideAtual += direcao;
+
+    if(slideAtual >= slides.length) {
+        slideAtual = 0;
+    }
+
+    if(slideAtual < 0) {
+        slideAtual = slides.length - 1;
+    }
+
+    atualizarSlides();
+}
+
+setInterval(() => {
+    mudarSlide(1);
+}, 4000);
+
+atualizarSlides();
+
+</script>
+
+</body>
+</html>
